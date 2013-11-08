@@ -1,0 +1,181 @@
+<apex:page sidebar="false" showHeader="false" controller="DataChooserController" standardStyleSheets="false">
+    <head>
+        <meta charset="utf-8" />
+        <title>Force.com Mobile Developer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        
+        <!-- Le styles -->
+        <link href="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.css')}" rel="stylesheet"/>
+        <style type="text/css">
+            body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #f5f5f5;
+            }
+            
+        </style>
+        <link href="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.css')}" rel="stylesheet"/>
+        
+        
+        <!-- Fav and touch icons -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-144-precomposed.png')}"/>
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-114-precomposed.png')}"/>
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-72-precomposed.png')}"/>
+        <link rel="apple-touch-icon-precomposed" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-57-precomposed.png')}"/>
+    </head>
+    <body>
+        
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#">Developer Portal</a>
+                    <div class="nav-collapse collapse">
+                        <p class="navbar-text pull-right">
+                            <a href="#" class="navbar-link disabled">js@demo.com</a>&nbsp;|&nbsp;
+                        </p>
+                        <ul class="nav">
+                            <li class="active"><a href="CommunitiesSelfReg">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div><!-- fluid container-->
+            </div>
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Apps</li>
+                            <li><a href="#">Todos</a></li>
+                            <li class="nav-header">Dev Editions</li>
+                            <!--https://na1.salesforce.com/secur/frontdoor.jsp?sid=<sid_value>retURL=/_ui/common/apex/debug/ApexCSIPage -->
+                            <li><a href="https://dooder-dev-ed.my.salesforce.com/_ui/common/apex/debug/ApexCSIPage" onclick="$('#csiModal').modal()" data-toggle="modal" target="iframe_a">sf@demo.com</a></li>
+                            <li><a href="#">sm@demo.com</a></li>
+                            <li class="nav-header">Logs</li>
+                            <li><a href="#">Today</a></li>
+                        </ul>
+                    </div><!--/.well -->
+                </div><!--/span-->
+                
+                <div class="span9" style="margin-top: 10px;">
+                    <img src="{!URLFOR($Resource.Header)}" style="width: 940px;" />
+                </div>
+                
+                <div class="span9" style="margin-top: 10px;">
+                    <apex:form >
+                        <apex:actionFunction action="{!setSelected}" name="save">
+                            <!--<apex:param name="isselected" assignTo="{!tableSelected}" value="" />-->
+                            <apex:param name="tblName" assignTo="{!selectedTable}" value="" />
+                        </apex:actionFunction>
+                        <div class="navbar navbar-inverse ">
+                            <div class="navbar-inner">
+                                <div class="container-fluid">
+                                    <ul class="nav" style="margin-top: 10px;">
+                                        <li class="active" style="color: white;">MyApp</li>
+                                    </ul>
+									<a href="Home4" class="btn pull-right">Save</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row-fluid">
+                                <div class="span3">
+                                    <h4>Tables</h4>
+                                    <ul class="nav nav-list nav-sidenav">
+                                        <apex:repeat value="{!meta}" var="table">
+                                            <li>
+                                                <nobr>
+                                                    <apex:inputCheckbox onclick="save('{!table.tableName}')" style="margin-bottom: 6px; margin-right: 6px;" value="{!table.usingTable}" />
+                                                    <apex:commandLink styleClass="active" value="{!table.tableName}" action="{!getFields}" rerender="fieldlist">
+                                                        <apex:param value="{!table.usingTable}" name="tname" />
+                                                        <apex:param value="{!table.tableName}" assignto="{!selectedTable}" name="tblname" />
+                                                    </apex:commandLink>
+                                                </nobr>
+                                            </li>                                                
+                                        </apex:repeat>
+                                    </ul>
+                                    <hr/>
+                                    <a href="#data" class="btn" data-toggle="modal">Select Table</a>
+                                </div><!--/span-->
+                                <div class="span8">
+                                    <apex:outputPanel id="fieldlist">
+                                        <table class="table table-striped table-hover">
+                                            <tr>
+                                                <th>In Use</th>
+                                                <th>Name</th>
+                                                <th>Type</th>
+                                            </tr>
+                                            <apex:repeat value="{!fields}" var="field">
+                                                <tr>
+                                                    <td><input type="checkbox" /></td>
+                                                    <td>{!field.name}</td>
+                                                    <td>{!field.ftype}</td>
+                                                </tr>
+                                            </apex:repeat>
+                                        </table>
+                                    </apex:outputPanel>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- /row -->
+                    </apex:form>
+                </div><!--/span-->
+            </div><!--/row-->
+            
+            <!-- Data Schema Dialog -->
+            <div class="modal hide fade" id="data">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <div style="margin-top: 10px;">
+                        <h3>Data Chooser</h3>
+                    </div>
+                </div>
+                <div class="modal-body" >
+                    <apex:form >
+                        <div class="span3">
+                            <h4>Tables</h4>
+                            <ul class="nav nav-list nav-sidenav">
+                                <apex:repeat value="{!allTables}" var="table">
+                                    <li>
+                                        <nobr>
+                                            <apex:inputCheckbox style="margin-bottom: 6px; margin-right: 6px;" value="{!table.usingTable}" />
+                                            <apex:commandLink styleClass="active" value="{!table.tableName}" action="{!getFields}" rerender="fieldlist">
+                                                <apex:param value="{!table.usingTable}" name="tname" />
+                                                <apex:param value="{!table.tableName}" assignto="{!selectedTable}" name="tblname" />
+                                            </apex:commandLink>
+                                        </nobr>
+                                    </li>                                                
+                                </apex:repeat>
+                            </ul>
+                            <hr/>
+                            <a href="#" class="btn">Select Table</a>
+                        </div><!--/span-->
+                    </apex:form>
+                </div>    
+            </div>
+            
+            <hr/>
+            
+            <footer>
+                <p>© Company 2013</p>
+            </footer>
+            
+        </div><!--/.fluid-container-->
+        
+        <script src="{!URLFOR($Resource.jquery)}"></script>
+        <script src="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.js')}"></script>
+        
+    </body>
+</apex:page>

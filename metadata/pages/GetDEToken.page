@@ -1,0 +1,13 @@
+<apex:page controller="GetDETokenController" action="{!loadHandler}" >
+    <apex:outputPanel rendered="{!doRedirect}">
+        <script>
+        	location.href = 'https://login.salesforce.com/services/oauth2/authorize?display=touch'
+			    + '&response_type=code&client_id=' 
+                + '{!Consumer_Key}'
+                + '&redirect_uri=https://dooder-dev-ed.my.salesforce.com/apex/GetDEToken';
+        </script>
+    </apex:outputPanel>
+    <apex:outputPanel rendered="{! doRedirect = false}">
+    	Got the auth stuff
+    </apex:outputPanel>
+</apex:page>

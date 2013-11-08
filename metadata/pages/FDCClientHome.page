@@ -1,0 +1,12 @@
+<apex:page controller="FDClientController" action="{!init}" >
+    <script>
+    	var raw = {!rawResponse};
+    </script>
+    This is the FDCClient start page.
+    
+    <textarea cols="150" rows="40" id="raw">
+    </textarea>
+    <script>
+    	document.getElementById('raw').value = JSON.stringify(raw, null, 4);
+    </script>
+</apex:page>

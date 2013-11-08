@@ -1,0 +1,446 @@
+<apex:component >
+            <style>
+                #outer-shell{min-width:700px;margin-top:-20px}#panel-board{width:100%}.panel-container{width:49.9%;float:left}.panel{width:97%;margin:20px 0 10px 0;-moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;overflow:visible;background-color:#fff}.links-block-top-margin{margin-top:20px;margin-right:20px}.panel .top-line{-moz-border-radius-topleft:5px;-webkit-border-top-left-radius:5px;border-top-left-radius:5px;-moz-border-radius-topright:5px;-webkit-border-top-right-radius:5px;border-top-right-radius:5px;background-color:#dedede;border:1px solid #ccc;height:32px}.panel h2{font-size:1.083em;font-weight:bold;padding-top:9px;padding-left:10px;float:left}.panel .headerLink{color:#015ba7;font-size:1em;text-decoration:none;float:right;padding-right:18px;padding-top:9px}.panel .content{-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px;border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-webkit-border-bottom-right-radius:5px;border-bottom-right-radius:5px;overflow:inherit;border-left:1px solid #ccc;border-right:1px solid #ccc;border-bottom:1px solid #ccc}.relatedLinks{background-color:#f8f8f9;clear:both;border-top:1px solid #ccc;-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px;border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-webkit-border-bottom-right-radius:5px;border-bottom-right-radius:5px}.panel .relatedLinks .top-line{background-color:#f8f8f9;border:none}.relatedLinks .top-line .header{padding:0 0 0 0;color:#666;font-size:.917em;font-weight:bold;margin-bottom:2px;margin-left:15px;padding-top:10px}.relatedLinks .links{margin-left:15px;margin-top:3px;padding-bottom:15px;line-height:20px}.links a,.relatedLinks .links:visited{color:#015ba7;text-decoration:none;font-size:1.083em}.panelContent{width:100%;background-color:#fff;-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px;border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-webkit-border-bottom-right-radius:5px;border-bottom-right-radius:5px}.panel-content-item{min-height:60px;padding-bottom:10px;position:relative;overflow:visible}.usage-warn{background-color:#fffedd}.usage-warn-last{-moz-border-radius-bottomleft:5px;-webkit-border-bottom-left-radius:5px;border-bottom-left-radius:5px;-moz-border-radius-bottomright:5px;-webkit-border-bottom-right-radius:5px;border-bottom-right-radius:5px}.panel-content-item .type{color:#666;padding-left:10px;padding-top:12px;font-size:.917em;font-weight:normal}.panel-content-item .type .title{text-transform:uppercase}.panel-content-item .visual{height:20px;padding-left:15px;margin:5px 0 10px 0}.panel-content-item .num{height:20px;color:#015ba7;font-size:1.846em;padding-top:5px;padding-left:10px;font-weight:bold;float:left}.panel-content-item .textOnly{color:#7d7d84}.panel-content-item .error a{text-decoration:none;color:#015ba7}.panel-content-item .num a{text-decoration:none;color:#015ba7}.links a,.relatedLinks .links{color:#015ba7;text-decoration:none;font-size:1em}.panel-content-item .desc{height:20px;color:#7d7d84;padding-left:15px;font-size:.917em;font-style:italic}.panel-content-item .desc .desc-num{height:20px;color:#666;color:#666;padding-left:15px;font-style:normal;font-weight:bold}.panel-content-item .error{height:20px;color:#7d7d84;padding-left:15px;font-size:.917em;font-style:italic}.panel-content-item .error .desc-num{height:20px;color:#666;color:#666;padding-left:15px;font-style:normal}.bar-na{background-color:#e4e4e4;border:1px solid #aaa;height:12px;float:left;text-align:center;color:#777}.bar-positive{background-color:#65a612;border-bottom:1px solid #65a612;border-top:1px solid #457507;border-left:1px solid #65a612;z-index:5;height:12px;float:left}.bar-positive-warn{background-color:#da0000;border-bottom:1px solid #da0000;border-top:1px solid #870a0a;border-left:1px solid #da0000}.bar-negative{background-color:#e4e4e4;border-bottom:1px solid #aaa;border-right:1px solid #aaa;border-top:1px solid #777;height:12px;float:left}.bar{margin-top:7px;width:105px;float:right}.set-panel-horizontal{background-color:#f8f8f9}.set-info-horizontal{float:left;width:370px;border-right:1px solid #ccc;-moz-border-radius-bottomright:0;-webkit-border-bottom-right-radius:0;border-bottom-right-radius:0}.set-links-horizontal{padding-top:0;margin-left:370px;clear:none;border-top:none}.panelRight{float:right;padding-right:10px}.datalink{margin-top:2px}.datalink .valueSubscript{color:#666;font-size:.75em;font-weight:normal;vertical-align:.075em}.border-top{border-top:1px solid #ccc}.warning-num{color:#666;font-weight:bold}.warning-icon{float:right;margin-top:5px;margin-right:10px}#bodyCell{background:url('/img/in-page_clouds.png') no-repeat #fff;height:234px}.bar-container{float:right}#HomepageSettingDialog a{color:#015ba7;text-decoration:none}#HomepageSettingDialog .instruction{width:65%;float:left;padding-top:15px}#HomepageSettingDialog .launchButton{float:right;margin-top:15px;margin-right:25px}#dialogContent .dialogFirst{font-weight:bold}#dialogContent .blockInput{padding:4px 0 2px 0}.dualPanelClear,.floatClear{clear:both}.panelLeft{float:left}.panel-content-item .infoIcon{margin-left:5px;vertical-align:middle;text-transform:none}
+            </style>
+            
+            <div id="outer-shell">
+                <div id="hack-min-width"></div>
+                <div id="panel-board">
+                    <div class="dualPanelClear"></div>
+                    <div class="panel-container"><span id="j_id0:j_id9:0:j_id13">
+                        <div class="panel">
+                            <div class="top-line">
+                                <p style="font-size: 15px; font-weight: bold; margin-left: 10px; margin-top: 7px;">Schema</p><span id="j_id0:j_id9:0:j_id13:j_id14:j_id17" style="display: none;"></span>
+                            </div>
+                            <div class="content">
+                                <div class="panelContent">
+                                    <div class="panel-content-item   ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Objects</span>
+                                                <div class="mouseOverInfoOuter" id="j_id0:j_id9:0:j_id13:j_id14:j_id21:0:j_id24" onfocus="addMouseOver(this)" onmouseover="addMouseOver(this)" tabindex="0">
+                                                    <img src="/s.gif" alt="" class="infoIcon" title="" />
+                                                    <div class="mouseOverInfo" id="j_id0:j_id9:0:j_id13:j_id14:j_id21:0:j_id24_inner" style="display: none; left: 21px;">
+                                                        <div class="body">Includes custom settings, which are a special type of custom object.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_schema_num_1">
+                                                    <a href="/p/setup/custent/CustomObjectsPage?setupid=DBConsole" title="0 objects - go to list">2</a>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual"><span id="j_id0:j_id9:0:j_id13:j_id14:j_id21:0:j_id38">
+                                                <div class="bar-container">
+                                                    <div class="bar">
+                                                        <div class="bar-positive " style="width:0px;"></div>
+                                                        <div class="bar-negative" style="width:100px;"></div>
+                                                    </div>
+                                                    <div class="warning-icon"></div>
+                                                </div></span>
+                                                
+                                            </div><span id="j_id0:j_id9:0:j_id13:j_id14:j_id21:0:j_id49">
+                                            <div align="right" class="desc">
+                                                <span class="desc-num">0%</span>(maximum 2,000)
+                                                <br />
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                    <div class="panel-content-item  border-top ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Custom Settings</span>
+                                                <div class="mouseOverInfoOuter" id="j_id0:j_id9:0:j_id13:j_id14:j_id21:1:j_id24" onfocus="addMouseOver(this)" onmouseover="addMouseOver(this)" tabindex="0">
+                                                    <img src="/s.gif" alt="" class="infoIcon" title=""/>
+                                                    <div class="mouseOverInfo" id="j_id0:j_id9:0:j_id13:j_id14:j_id21:1:j_id24_inner" style="display: none; left: 21px;">
+                                                        <div class="body">Includes both visible and hidden custom settings.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_schema_num_2"><a href="/setup/ui/listCustomSettings.apexp" title="0 custom settings - go to list">8</a>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual">
+                                                
+                                            </div><span id="j_id0:j_id9:0:j_id13:j_id14:j_id21:1:j_id49">
+                                            <div align="right" class="desc">
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                    <div class="panel-content-item  border-top ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Data Records</span>
+                                                <div class="mouseOverInfoOuter" id="j_id0:j_id9:0:j_id13:j_id14:j_id21:2:j_id24" onfocus="addMouseOver(this)" onmouseover="addMouseOver(this)" tabindex="0">
+                                                    <img src="/s.gif" alt="" class="infoIcon" title=""/>
+                                                    <div class="mouseOverInfo" id="j_id0:j_id9:0:j_id13:j_id14:j_id21:2:j_id24_inner" style="display:none;">
+                                                        <div class="body">Data records are an approximation of total records used.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_schema_num_3"><a href="/setup/org/orgstorageusage.jsp?id=00DE0000000cGkQ&amp;setupid=CompanyResourceDisk" title="0 records - go to storage usage">241</a>
+                                                    <span class="valueSubscript">(Approx.)</span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual"><span id="j_id0:j_id9:0:j_id13:j_id14:j_id21:2:j_id38">
+                                                <div class="bar-container">
+                                                    <div class="bar">
+                                                        <div class="bar-positive " style="width:0px;"></div>
+                                                        <div class="bar-negative" style="width:100px;"></div>
+                                                    </div>
+                                                    <div class="warning-icon"></div>
+                                                </div></span>
+                                                
+                                            </div><span id="j_id0:j_id9:0:j_id13:j_id14:j_id21:2:j_id49">
+                                            <div align="right" class="desc">
+                                                <span class="desc-num">0%</span>(maximum 524,288)
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                </div><span id="j_id0:j_id9:0:j_id13:j_id14:j_id57">
+                                <div class="relatedLinks">
+                                    <div class="top-line">
+                                        <div class="header">
+                                            Related Links
+                                        </div>
+                                    </div>
+                                    <div class="links"><span id="j_id0:j_id9:0:j_id13:j_id14:j_id60">
+                                        <a href="/01I/e?retURL=%2Fsetup%2Fdbconsole.apexp%3Fsetupid%3DDBConsole">Create a new object</a>
+                                        <br/>
+                                        <a href="datachooser?appid=a0Ai0000002XZRD">Data Browser</a>
+                                        <br/>
+                                        <a href="/00e?setupid=EnhancedProfiles">Manage object permissions</a>
+                                        <br/>
+                                        </span>
+                                    </div>
+                                </div></span>
+                                <div class="floatClear"></div>
+                            </div>
+                        </div></span>
+                        
+                    </div>
+                    <div class="panel-container"><span id="j_id0:j_id9:1:j_id13">
+                        <div class="panel">
+                            <div class="top-line">
+                                <p style="font-size: 15px; font-weight: bold; margin-left: 10px; margin-top: 7px;">API Usage</p><span id="j_id0:j_id9:1:j_id13:j_id14:j_id17" style="display: none;"></span>
+                            </div>
+                            <div class="content">
+                                <div class="panelContent">
+                                    <div class="panel-content-item   " style="height: 202px;">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">API Requests, Last 24 Hours</span>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_api_num_1"><span class="textOnly">1254</span>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual"><span id="j_id0:j_id9:1:j_id13:j_id14:j_id21:0:j_id38">
+                                                <div class="bar-container">
+                                                    <div class="bar">
+                                                        <div class="bar-positive " style="width:0px;"></div>
+                                                        <div class="bar-negative" style="width:100px;"></div>
+                                                    </div>
+                                                    <div class="warning-icon"></div>
+                                                </div></span>
+                                                
+                                            </div><span id="j_id0:j_id9:1:j_id13:j_id14:j_id21:0:j_id49">
+                                            <div align="right" class="desc">
+                                                <span class="desc-num">23%</span>(maximum 5,000)
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                </div><span id="j_id0:j_id9:1:j_id13:j_id14:j_id57">
+                                <div class="relatedLinks" style="height: 130px;">
+                                    <div class="top-line">
+                                        <div class="header">
+                                            Related Links
+                                        </div>
+                                    </div>
+                                    <div class="links">
+                                        <span id="j_id0:j_id9:1:j_id13:j_id14:j_id74">
+                                            <a href="/setup/build/webservices.apexp?setupid=WebServices">Show API Keys</a>
+                                            <br/>
+                                        </span>
+                                    </div>
+                                </div></span>
+                                <div class="floatClear"></div>
+                            </div>
+                        </div></span>
+                        
+                    </div>
+                    <div class="dualPanelClear"></div>
+                    <div class="panel-container"><span id="j_id0:j_id9:2:j_id13">
+                        <div class="panel">
+                            <div class="top-line">
+                                <p style="font-size: 15px; font-weight: bold; margin-left: 10px; margin-top: 7px;">Business Logic</p><span id="j_id0:j_id9:2:j_id13:j_id14:j_id17" style="display: none;"></span>
+                            </div>
+                            <div class="content">
+                                <div class="panelContent">
+                                    <div class="panel-content-item   ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Rules</span>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_apex_num_1"><a href="/01Q?spl1=1" title="0 rules - go to list">0</a>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual"><span id="j_id0:j_id9:2:j_id13:j_id14:j_id21:0:j_id38">
+                                                <div class="bar-container">
+                                                    <div class="bar">
+                                                        <div class="bar-positive " style="width:0px;"></div>
+                                                        <div class="bar-negative" style="width:100px;"></div>
+                                                    </div>
+                                                    <div class="warning-icon"></div>
+                                                </div></span>
+                                                
+                                            </div><span id="j_id0:j_id9:2:j_id13:j_id14:j_id21:0:j_id49">
+                                            <div align="right" class="desc">
+                                                <span class="desc-num">0%</span>(maximum 1,000)
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                    <div class="panel-content-item  border-top ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Apex Trigger</span>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_apex_num_2"><a href="/setup/build/allTriggers.apexp" title="1 Apex trigger - go to list">2</a>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual">
+                                                
+                                            </div><span id="j_id0:j_id9:2:j_id13:j_id14:j_id21:1:j_id49">
+                                            <div align="right" class="desc">
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                    <div class="panel-content-item  border-top ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Apex Classes</span>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_apex_num_3"><a href="/01p" title="0 Apex classes - go to list">0</a>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual">
+                                                
+                                            </div><span id="j_id0:j_id9:2:j_id13:j_id14:j_id21:2:j_id49">
+                                            <div align="right" class="desc">
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                    <div class="panel-content-item  border-top ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Code Used</span>
+                                                <div class="mouseOverInfoOuter" id="j_id0:j_id9:2:j_id13:j_id14:j_id21:3:j_id24" onfocus="addMouseOver(this)" onmouseover="addMouseOver(this)" tabindex="0">
+                                                    <img src="/s.gif" alt="" class="infoIcon" title=""/>
+                                                    <div class="mouseOverInfo" id="j_id0:j_id9:2:j_id13:j_id14:j_id21:3:j_id24_inner" style="display:none;">
+                                                        <div class="body">Code used is the total number of characters used in Apex triggers and Apex classes (excluding comments, test methods, and @isTest annotated classes).</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_apex_num_4"><span class="textOnly">0%</span>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual"><span id="j_id0:j_id9:2:j_id13:j_id14:j_id21:3:j_id38">
+                                                <div class="bar-container">
+                                                    <div class="bar">
+                                                        <div class="bar-positive " style="width:0px;"></div>
+                                                        <div class="bar-negative" style="width:100px;"></div>
+                                                    </div>
+                                                    <div class="warning-icon"></div>
+                                                </div></span>
+                                                
+                                            </div><span id="j_id0:j_id9:2:j_id13:j_id14:j_id21:3:j_id49">
+                                            <div align="right" class="desc">
+                                                <span class="desc-num">0%</span>(41 of 3,000,000 characters)
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                </div><span id="j_id0:j_id9:2:j_id13:j_id14:j_id57">
+                                <div class="relatedLinks" style="height: 150px;">
+                                    <div class="top-line">
+                                        <div class="header">
+                                            Related Links
+                                        </div>
+                                    </div>
+                                    <div class="links">
+                                        <span id="j_id0:j_id9:2:j_id13:j_id14:j_id78">
+                                            <a href="/01Q/e?retURL=%2Fsetup%2Fdbconsole.apexp%3Fsetupid%3DDBConsole">Create a new trigger</a>
+                                            <br/>
+                                            <a href="/01Q/e?retURL=%2Fsetup%2Fdbconsole.apexp%3Fsetupid%3DDBConsole">Create a new REST Service</a>
+                                            <br/>
+                                            <a href="/setup/ui/listApexTraces.apexp">View system logs</a>
+                                            <br/>
+                                            <a href="/04s/o?retURL=%2Fsetup%2Fdbconsole.apexp%3Fsetupid%3DDBConsole&amp;setupid=DeployStatus">View deployments</a>
+                                            <br/>
+                                        </span>
+                                    </div>
+                                </div></span>
+                                <div class="floatClear"></div>
+                            </div>
+                        </div></span>
+                        
+                    </div>
+                    <div class="panel-container"><span id="j_id0:j_id9:3:j_id13">
+                        <div class="panel">
+                            <div class="top-line">
+                                <p style="font-size: 15px; font-weight: bold; margin-left: 10px; margin-top: 7px;">Most Used Licenses</p><a href="/00DE0000000cGkQ#00DE0000000cGkQ_RelatedUserLicenseList_target" title="Show All" class="headerLink">Show All</a>
+                            </div>
+                            <div class="content">
+                                <div class="panelContent">
+                                    <div class="panel-content-item   ">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Developer</span>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_users_num_1"><a href="/00DE0000000cGkQ#00DE0000000cGkQ_RelatedUserLicenseList_target" title="Database.com Admin">1</a>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual"><span id="j_id0:j_id9:3:j_id13:j_id14:j_id21:0:j_id38">
+                                                <div class="bar-container">
+                                                    <div class="bar">
+                                                        <div class="bar-positive " style="width:33px;"></div>
+                                                        <div class="bar-negative" style="width:67px;"></div>
+                                                    </div>
+                                                    <div class="warning-icon"></div>
+                                                </div></span>
+                                                
+                                            </div><span id="j_id0:j_id9:3:j_id13:j_id14:j_id21:0:j_id49">
+                                            <div align="right" class="desc">
+                                                <span class="desc-num">33%</span>(maximum 3)
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                    <div class="panel-content-item  border-top " style="height: 82px;">
+                                        <div class="panelLeft">
+                                            <div class="type">
+                                                <span class="title">Mobile User</span>
+                                            </div>
+                                            <div class="datalink">
+                                                
+                                                <div class="num" id="usage_block_users_num_2"><a href="/00DE0000000cGkQ#00DE0000000cGkQ_RelatedUserLicenseList_target" title="Database.com User">16</a>
+                                                    <span class="valueSubscript"></span>
+                                                </div>
+                                            </div>
+                                            <div class="floatClear"></div>
+                                        </div>
+                                        <div class="panelRight">
+                                            <div class="visual"><span id="j_id0:j_id9:3:j_id13:j_id14:j_id21:1:j_id38">
+                                                <div class="bar-container">
+                                                    <div class="bar">
+                                                        <div class="bar-positive " style="width:0px;"></div>
+                                                        <div class="bar-negative" style="width:100px;"></div>
+                                                    </div>
+                                                    <div class="warning-icon"></div>
+                                                </div></span>
+                                                
+                                            </div><span id="j_id0:j_id9:3:j_id13:j_id14:j_id21:1:j_id49">
+                                            <div align="right" class="desc">
+                                                <span class="desc-num">0%</span>(maximum 3)
+                                                <br/>
+                                            </div></span>
+                                        </div>
+                                        <div class="floatClear"></div>
+                                    </div>
+                                </div><span id="j_id0:j_id9:3:j_id13:j_id14:j_id57">
+                                <div class="relatedLinks">
+                                    <div class="top-line">
+                                        <div class="header">
+                                            Related Links
+                                        </div>
+                                    </div>
+                                    <div class="links">
+                                        <span id="j_id0:j_id9:3:j_id13:j_id14:j_id92">
+                                            <a href="/005/e?retURL=%2Fsetup%2Fdbconsole.apexp%3Fsetupid%3DDBConsole">Create a new user</a>
+                                            <br/>
+                                            <a href="/005?setupid=ManageUsers">Manage users</a>
+                                            <br/>
+                                            <a href="/00e?setupid=EnhancedProfiles">Manage user permissions</a>
+                                            <br/>
+                                            <a href="/ui/setup/Setup?setupid=Security">Manage security controls</a>
+                                            <br/>
+                                            <a href="/0Ya">View login history</a>
+                                            <br/>
+                                        </span>
+                                    </div>
+                                </div></span>
+                                <div class="floatClear"></div>
+                            </div>
+                        </div></span>
+                        
+                    </div>
+                </div>
+            </div>
+</apex:component>

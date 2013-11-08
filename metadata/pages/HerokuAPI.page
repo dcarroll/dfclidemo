@@ -1,0 +1,3 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="HerokuAPI" action="{!init}">
+    <a href="{!authURL}" target="_blank">Heroku OAuth</a>
+</apex:page>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>User DE Data</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>User DE Data</value>
+    </caseValues>
+    <fields>
+        <label><!-- Access Token --></label>
+        <name>AccessToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Instance Url --></label>
+        <name>InstanceUrl__c</name>
+    </fields>
+    <fields>
+        <label><!-- Issued At --></label>
+        <name>IssuedAt__c</name>
+    </fields>
+    <fields>
+        <label><!-- OAuth ID --></label>
+        <name>OAuthId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Refresh Token --></label>
+        <name>RefreshToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Scope --></label>
+        <name>Scope__c</name>
+    </fields>
+    <fields>
+        <label><!-- Signature --></label>
+        <name>Signature__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- User DE Data --></relationshipLabel>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

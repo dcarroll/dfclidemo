@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>dcarroll@salesforce.com</contactEmail>
+    <label>SFDugApp</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:3000/#/</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hupqqk7YYhDRinUM8ciJPRAWKlnVQPTcyZ8nfWZs2_j61lqO.YdgA3JhWYYmAV7n_JhMc2e</consumerKey>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Todo</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Todos</value>
+    </caseValues>
+    <fields>
+        <label><!-- Done --></label>
+        <name>Done__c</name>
+    </fields>
+    <fields>
+        <label><!-- How Many --></label>
+        <name>HowMany2__c</name>
+    </fields>
+    <fields>
+        <label><!-- How Many --></label>
+        <name>HowMany3__c</name>
+    </fields>
+    <fields>
+        <label><!-- How Many --></label>
+        <name>HowMany4__c</name>
+    </fields>
+    <fields>
+        <label><!-- How Many --></label>
+        <name>HowMany5__c</name>
+    </fields>
+    <fields>
+        <label><!-- How Many --></label>
+        <name>HowMany__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Text --></label>
+        <name>MyTextField__c</name>
+    </fields>
+    <fields>
+        <label><!-- Test Field --></label>
+        <name>TestField__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

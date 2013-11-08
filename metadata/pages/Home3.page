@@ -1,0 +1,372 @@
+<apex:page sidebar="false" showHeader="false" controller="CommunitiesSelfRegController" standardStyleSheets="false">
+    <head>
+        <meta charset="utf-8" />
+    <title>Force.com Mobile Developer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+    <!-- Le styles -->
+        <link href="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.css')}" rel="stylesheet"/>
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+    </style>
+        <link href="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.css')}" rel="stylesheet"/>
+
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-144-precomposed.png')}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-114-precomposed.png')}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-72-precomposed.png')}"/>
+    <link rel="apple-touch-icon-precomposed" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-57-precomposed.png')}"/>
+  </head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Developer Portal</a>
+                <div class="nav-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        <a href="#" class="navbar-link disabled">js@demo.com</a>&nbsp;|&nbsp;
+                    </p>
+                    <ul class="nav">
+                        <li class="active"><a href="Landing3">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span3">
+                <div class="well sidebar-nav">
+                    <ul class="nav nav-list">
+                        <li class="nav-header">Apps</li>
+                        <li><a href="#">Todos</a></li>
+                        <li class="nav-header">Dev Editions</li>
+                        <!--https://na1.salesforce.com/secur/frontdoor.jsp?sid=<sid_value>retURL=/_ui/common/apex/debug/ApexCSIPage -->
+                        <li><a href="https://dooder-dev-ed.my.salesforce.com/_ui/common/apex/debug/ApexCSIPage" onclick="$('#csiModal').modal()" data-toggle="modal" target="iframe_a">sf@demo.com</a></li>
+                        <li><a href="#">sm@demo.com</a></li>
+                        <li class="nav-header">Logs</li>
+                        <li><a href="#">Today</a></li>
+                    </ul>
+                </div><!--/.well -->
+            </div><!--/span-->
+        
+        
+            <div class="span9" style="margin-top: 10px;">
+                <img src="{!URLFOR($Resource.Header)}" style="width: 940px;" />
+                <div style="margin-top: 10px;">
+                    <div class="accordian-group">
+                        <div class="accordian-heading">
+                            <div>
+                                <h3>Welcome to The Force.com Mobile Development Portal</h3>
+                            </div>
+                        </div>
+                        <div id="collapseOne" class="accordion-body collapse in">
+                            <div class="">
+                                <p>
+                                    The portal is the place to create and maintain your mobile applications. From here you can
+                                    create new mobile apps, configure you backend data, setup notifications, interact with other mobile
+                                    developers and completely manage the mobile development process.
+                                </p>
+                                
+                                <ul class="nav nav-tabs nav-stacked">
+                                    <li><a href="#create" data-toggle="modal">Create a mobile app</a></li>
+                                    <li><a href="#data" data-toggle="modal">Configure you data schema</a></li>
+                                    <li><a href="#cli" data-toggle="modal">Develop locally on your desktop</a></li>
+                                    <li><a href="#generate" data-toggle="modal">Configure Push Notifications</a></li>
+                                    <li><a href="#push" data-toggle="modal">Generate your hybrid app XCode or Android project</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/row-->
+        </div>
+        
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    Hello
+                </div>
+            </div>
+        </div>
+        
+        <!-- Create App Info Dialog -->
+        <div class="modal hide fade" id="create">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Creating an App</h3>
+                </div>
+            </div>
+            <div class="modal-body" >
+                <div>
+                    <div class="well" style="margin-top: 10px;">
+                        Creating a new app is easy! Simply click "Creat App" below. Give your app a name. An app is created in a Developer Edition
+                        of salesforce.com. You can select to use a Developer Edition that you already have, or you can decide to create a new
+                        Developer Edition. Once you app is created you will have access to the API keys that you need to develop your app.
+                    </div>
+                    <div class="pull-right">
+                        <button type="button" data-dismiss="modal" data-target="#newapp" class="btn" data-toggle="modal">Create App</button>
+                    </div>
+                </div>
+            </div>    
+        </div>
+        
+        <!-- Create App Form Dialog -->
+        <div class="modal hide fade" id="newapp">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Start a New App</h3>
+                </div>
+            </div>
+            <div class="modal-body" >
+                <div class="well">
+                    <label><h4>App Name</h4></label>
+                    <span class="help-block">
+                        <input type="text" placeholder="Enter App Name" />
+                        <em>&nbsp;&nbsp;Using joe-de (authenticated)</em>
+                    </span>
+                        <h4>Options</h4>
+                    <div class="well" style="background-color: lightblue;">
+                        <label>Use a different Developer Edition >></label>
+                        <label>Create a new Developer Edition</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn" data-dismiss="modal">Close</a>
+                <a href="#appdone" id="saveAppButton" data-toggle="modal" data-dismiss="modal" disabled="true" class="btn btn-primary">Continue</a>
+            </div>
+        </div>
+        
+        <!-- App Done Dialog -->
+        <div class="span7 modal hide fade" id="appdone" style="width: 640px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Getting Started</h3>
+                </div>
+            </div>
+            <div class="modal-body" style="max-height: 700px;">
+                <div id="capp" class="span7 well">
+                    <p>
+                        <h3>Your app has been created successfully!</h3>
+                    </p>
+                    <p>
+                        Learn how to develop Hybrid apps with our Quickstart templates, or download your project with the 
+                        Force.com command line interface tool.
+                    </p>
+                    <div >
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                Templates
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#appdone2" data-toggle="modal" data-dismiss="modal">Force.com SmartSync Pack</a></li>
+                                <li><a href="#appdone2" data-toggle="modal" data-dismiss="modal">Angular Mobile Pack</a></li>
+                                <li><a href="#appdone2" data-toggle="modal" data-dismiss="modal">JQM Mobile Pack</a></li>
+                                <li><a href="#appdone2" data-toggle="modal" data-dismiss="modal">Sencha Mobile Pack</a></li>
+                                <li><a href="#appdone2" data-toggle="modal" data-dismiss="modal">Knockout.js Mobile Pack</a></li>
+                                <li><a href="#appdone2" data-toggle="modal" data-dismiss="modal">Backbone.js Mobile Pack</a></li>
+                                <!-- dropdown menu links -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="well">
+                        <h4>App Info</h4>
+                        <ul>
+                            <li>
+                                App Name: MyApp
+                            </li>
+                            <li>
+                                Template: n/a
+                            </li>
+                            <li>
+                                Dev Edition: js@demo.com
+                            </li>
+                            <li>
+                                OAuth Consumer Key: <input type="text" value="3MVG9A2kN3Bn17hupqqk7YYhDRnqZgZ_fwrzJ8.8N8_RZiflFCd7nHfy2JoXmP7t20mHRz1_pZl0zUGPTFO5J"/>
+                                <button type="button" class="btn">Copy</button>
+                            </li>
+                            <li>
+                                OAuth Secret: <a href="#">Click to reveal</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+            <div class="modal-footer">
+                <a href="Home4" class="btn">Done</a>
+            </div>
+        </div>
+        
+        <!-- App Done Dialog 2 -->
+        <div class="span7 modal hide fade" id="appdone2" style="width: 640px;">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Getting Started</h3>
+                </div>
+            </div>
+            <div class="modal-body" style="max-height: 700px;">
+                <div id="capp" class="span7 well">
+                    <p>
+                        <h3>Your app has been created successfully!</h3>
+                    </p>
+                    <p>
+                        Learn how to develop Hybrid apps with our Quickstart templates, or download your project with the 
+                        Force.com command line interface tool.
+                    </p>
+                    <div >
+                        <div class="btn-group">
+                            <button class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                                Templates
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Force.com SmartSync Pack</a></li>
+                                <li><a href="#">Angular Mobile Pack</a></li>
+                                <li><a href="#">JQM Mobile Pack</a></li>
+                                <li><a href="#">Sencha Mobile Pack</a></li>
+                                <li><a href="#">Knockout.js Mobile Pack</a></li>
+                                <li><a href="#">Backbone.js Mobile Pack</a></li>
+                                <!-- dropdown menu links -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="well">
+                        <h4>App Info</h4>
+                        <ul>
+                            <li>
+                                App Name: MyApp
+                            </li>
+                            <li>
+                                Template: Angular Mobile Pack
+                            </li>
+                            <li>
+                                Dev Edition: js@demo.com
+                            </li>
+                            <li>
+                                OAuth Consumer Key: <input type="text" value="3MVG9A2kN3Bn17hupqqk7YYhDRnqZgZ_fwrzJ8.8N8_RZiflFCd7nHfy2JoXmP7t20mHRz1_pZl0zUGPTFO5J"/>
+                                <button type="button" class="btn">Copy</button>
+                            </li>
+                            <li>
+                                OAuth Secret: <a href="#">Click to reveal</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="Home4" class="btn">Continue</a>
+            </div>
+        </div>
+        
+        <!-- Data Schema Dialog -->
+        <div class="modal hide fade" id="data">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Data Modeling</h3>
+                </div>
+            </div>
+            <div class="modal-body" >
+                <div id="capp" class="span6 well">
+                    <p>Using the Force CLI you can quickly select existing database tables, modify your tables or create entirely new tables.</p>
+                    <p>&nbsp;&nbsp;force createtable (--name:&lt;tablename&gt;) [--more:&lt;options&gt;]</p>
+                    <p>&nbsp;&nbsp;force showtables (--all:&lt;true | false&gt;)</p>
+                    <p>&nbsp;&nbsp;force addfield (--tablename:&lt;tablename&gt;) [--more:&lt;options&gt;]</p>
+                    <p>
+                        <h5>Installation</h5>
+                        npm install force-cli
+                    </p>
+                </div>
+            </div>    
+        </div>
+
+        <div class="modal hide fade" id="cli">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Developing Your App</h3>
+                </div>
+            </div>
+            <div class="modal-body" >
+                <div id="capp" class="span6 well">
+                    <p>
+                        Using the Force command line interface you can pull your application project down to you local desktop. 
+                        Once you have your project local you can use your favorite editor to developer your application. After getting
+                        your application just right you can push your app to Force.com.
+                    </p>
+                    <p>&nbsp;&nbsp;force pull (--name:&lt;app name&gt;) [--framework:&lt;angular | jquery | knockout&gt;]</p>
+                    <p>&nbsp;&nbsp;force push (--name:&lt;app name&gt;)</p>
+                    <p>&nbsp;&nbsp;force install (--name:&lt;app name&gt;) (--template:&lt;template name&gt;)</p>
+                </div>
+            </div>    
+        </div>
+
+        <div class="modal hide fade" id="push">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Deploying Your App</h3>
+                </div>
+            </div>
+            <div class="modal-body" >
+                <div id="capp" class="span6 well">
+                    <p>
+                        You can turn your app into a Hybrid app that you can then compile and deploy to the Apple App Store or
+                        to the Google Play store right from the command line. Make sure you have installed the <a href="#">Salesforce Mobile SDK
+                        2.0.</a>
+                    </p>
+                    <p>&nbsp;&nbsp;sdk create (--name:&lt;app name&gt;)</p>
+                </div>
+            </div>    
+        </div>
+
+        <div class="modal hide fade" id="generate">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div style="margin-top: 10px;">
+                    <h3>Packaging Your App</h3>
+                </div>
+            </div>
+            <div class="modal-body" >
+                <div id="capp" class="span6 well">
+                    <h2>When are Push Notifications ready?</h2>
+                </div>
+            </div>    
+        </div>
+
+        <hr/>
+        
+        <footer>
+            <p>© Company 2013</p>
+        </footer>
+        
+    </div><!--/.fluid-container-->
+
+    <script src="{!URLFOR($Resource.jquery)}"></script>
+    <script src="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.js')}"></script>
+  
+</body>
+</apex:page>

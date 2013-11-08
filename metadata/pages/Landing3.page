@@ -1,0 +1,154 @@
+<apex:page sidebar="false" showHeader="false" controller="CommunitiesSelfRegController" standardStyleSheets="false">
+    <head>
+        <meta charset="utf-8" />
+    <title>Force.com Mobile Developer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+    <!-- Le styles -->
+        <link href="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap.css')}" rel="stylesheet"/>
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
+
+    </style>
+        <link href="{!URLFOR($Resource.bootstrap, 'bootstrap/css/bootstrap-responsive.css')}" rel="stylesheet"/>
+
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-144-precomposed.png')}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-114-precomposed.png')}"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-72-precomposed.png')}"/>
+    <link rel="apple-touch-icon-precomposed" href="{!URLFOR($Resource.bootstrap, 'img/apple-touch-icon-57-precomposed.png')}"/>
+  </head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="brand" href="#">Developer Portal</a>
+                <div class="nav-collapse collapse">
+                    <p class="navbar-text pull-right">
+                        <a href="CommunitiesLogin" class="navbar-link disabled">Log In</a>&nbsp;|&nbsp;
+                        <a href="#register" data-toggle="modal" class="navbar-link">Sign Up</a>
+                    </p>
+                    <ul class="nav">
+                        <li class="active"><a href="CommunitiesSelfReg">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span10">
+                <img src="{!URLFOR($Resource.Header)}" style="width: 940px;" />
+            </div><!--/span-->
+        </div><!--/row-->
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span10">
+                <img src="{!URLFOR($Resource.HomeHeader)}" />
+            </div><!--/span-->
+        </div><!--/row-->
+        <div class="row-fluid" >
+            <div class="span1"></div>
+            <div class="span10" style="background-color: white; margin-top: 15px">
+                <img src="{!URLFOR($Resource.blog1)}" />
+            </div><!--/span-->
+        </div><!--/row-->
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span10" style="background-color: white; margin-top: 15px">
+                <img src="{!URLFOR($Resource.blog2)}" />
+            </div><!--/span-->
+        </div><!--/row-->
+        <div class="row-fluid">
+            <div class="span1"></div>
+            <div class="span10" style="background-color: white; margin-top: 15px">
+                <img src="{!URLFOR($Resource.blog3)}" />
+            </div><!--/span-->
+        </div><!--/row-->
+        
+        <div class="modal hide fade" id="register">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Mobile Developer Registration</h3>
+            </div>
+            <div class="modal-body" style="height: 95%; max-height: 100%; width: 97%">
+                <apex:form id="theForm" forceSSL="true">
+                    <div class="row">
+                        <div class="span1">
+                            <div>Name</div>
+                        </div>
+                        <div class="span4">
+                            <div><input type="text"/></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span1">
+                            <div>Email</div>
+                        </div>
+                        <div class="span4">
+                            <div><input type="text"/></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span1">
+                            <div>Password</div>
+                        </div>
+                        <div class="span4">
+                            <div><input type="text"/></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span1">
+                            <div>Confirm Password</div>
+                        </div>
+                        <div class="span4">
+                            <div><input type="text"/></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span3">
+                            <div>New to Force.com?&nbsp;&nbsp;&nbsp;<input type="checkbox"/></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="span5">
+                            <p class="pull-right">
+                                <a href="Home3" class="btn btn-primary btn-large">Register >></a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                </apex:form>
+            </div>    
+        </div>
+        
+        <hr/>
+        
+        <footer>
+            <p>© Company 2013</p>
+        </footer>
+        
+    </div><!--/.fluid-container-->
+
+    <script src="{!URLFOR($Resource.jquery)}"></script>
+    <script src="{!URLFOR($Resource.bootstrap, 'bootstrap/js/bootstrap.js')}"></script>
+  
+</body>
+</apex:page>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Adam</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Adams</value>
+    </caseValues>
+    <fields>
+        <label><!-- parking --></label>
+        <name>parking__c</name>
+    </fields>
+    <fields>
+        <label><!-- space --></label>
+        <name>space__c</name>
+        <relationshipLabel><!-- spacess --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

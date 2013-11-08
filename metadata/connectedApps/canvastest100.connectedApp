@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canvasConfig>
+        <accessMethod>Post</accessMethod>
+        <canvasUrl>https://canvastest100.herokuapp.com/canvas.jsp</canvasUrl>
+    </canvasConfig>
+    <contactEmail>dcarroll@salesforce.com</contactEmail>
+    <iconUrl>https://canvastest100.herokuapp.com/icon.png</iconUrl>
+    <label>canvastest100</label>
+    <logoUrl>https://canvastest100.herokuapp.com/logo.png</logoUrl>
+    <oauthConfig>
+        <callbackUrl>https://canvastest100.herokuapp.com/sdk/callback.html</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hupqqk7YYhDRhVHWQjUggrMK.eUkW237WLPD0sa.__lVOXW8xXBGJy_S2B6b0FxaG791ACs</consumerKey>
+        <scopes>Basic</scopes>
+        <scopes>Chatter</scopes>
+    </oauthConfig>
+</ConnectedApp>

@@ -1,0 +1,7 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+    <style>
+        body { margin: 0px; }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <apex:canvasApp applicationName="Order_Now" namespacePrefix="drd" />
+</apex:page>

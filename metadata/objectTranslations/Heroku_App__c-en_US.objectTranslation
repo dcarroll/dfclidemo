@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Heroku App</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Heroku Apps</value>
+    </caseValues>
+    <fields>
+        <label><!-- Framework --></label>
+        <name>Framework__c</name>
+    </fields>
+    <fields>
+        <label><!-- Heroku App Id --></label>
+        <name>Heroku_App_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Stack --></label>
+        <name>Stack__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Url --></label>
+        <name>Web_Url__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

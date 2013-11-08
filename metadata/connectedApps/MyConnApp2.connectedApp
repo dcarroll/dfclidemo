@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>dcarroll@salesforce.com</contactEmail>
+    <label>MyConnApp2</label>
+    <oauthConfig>
+        <callbackUrl>sfdc://success</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hupqqk7YYhDRjGrHSg8y0dejwr.K80izUx3Hq2hRyEQXdq65fj4PyCovTpyfvEULQ3I8vIb</consumerKey>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>

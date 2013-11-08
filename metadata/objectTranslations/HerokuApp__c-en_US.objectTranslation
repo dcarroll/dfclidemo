@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>HeorkuApp</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>HeorkuApp</value>
+    </caseValues>
+    <fields>
+        <label><!-- App Id --></label>
+        <name>AppId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secret --></label>
+        <name>Secret__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Page --></label>
+        <name>StartPage__c</name>
+    </fields>
+    <fields>
+        <label><!-- access_token --></label>
+        <name>access_token__c</name>
+    </fields>
+    <fields>
+        <label><!-- expires_in --></label>
+        <name>expires_in__c</name>
+    </fields>
+    <fields>
+        <label><!-- refresh_token --></label>
+        <name>refresh_token__c</name>
+    </fields>
+    <fields>
+        <label><!-- session_nonce --></label>
+        <name>session_nonce__c</name>
+    </fields>
+    <fields>
+        <label><!-- token_type --></label>
+        <name>token_type__c</name>
+    </fields>
+    <fields>
+        <label><!-- user_id --></label>
+        <name>user_id__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

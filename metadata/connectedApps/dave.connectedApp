@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>dcarroll@salesforce.com</contactEmail>
+    <label>Test</label>
+    <oauthConfig>
+        <callbackUrl>sfdc://success</callbackUrl>
+        <consumerKey>3MVG9A2kN3Bn17hupqqk7YYhDRgdSP3.VSMzhA5FKGnNvjs4YN5qHoJySzdsq22IgHoYm.0aY32Cyhe.3TH2K</consumerKey>
+        <scopes>Basic</scopes>
+    </oauthConfig>
+</ConnectedApp>

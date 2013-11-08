@@ -1,0 +1,46 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<style>
+.dLabel {
+	color: gray;
+}
+.dValue {
+	font-weight: bold;
+	font-size: 18px;
+}
+</style>
+<div class="span4 well">
+    <div class="row">
+        <div class="span4">
+        	<ul class="list">
+        		<li>
+        			<div class="dLabel">Name</div>
+        			<div class="dValue">{{account.Name}}</div>
+        		</li>
+        		<li>
+        			<div class="dLabel">Annual Revenue</div>
+        			<div class="dValue">{{ account.AnnualRevenue | 
+        				currency: "$": 2 : "," : "." }}</div>
+        		</li>
+        		<li>
+        			<div class="dLabel">SLA</div>
+        			<div class="dValue">{{account.SLA__c}}</div>
+        		</li>
+        		<li>
+        			<div class="dLabel">Type</div>
+        			<div class="dValue">{{account.Type}}</div>
+        		</li>
+        		<li>
+        			<div class="dLabel">Industry</div>
+        			<div class="dValue">{{account.Industry}}</div>
+        		</li>
+        	</ul>
+	    </div>
+    </div>
+    <div class="row">
+        <div class="span3">
+	        <a class="btn btn-primary" style="margin-top: 10px;" href="#/view/{{contact}}">Back to Contacts</a>
+	    </div>
+    </div>
+</div>
+
+</apex:page>
